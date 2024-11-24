@@ -16,8 +16,8 @@
   },
   "dependencies": {
     "@expo/vector-icons": "^14.0.2",
-    "@react-native-async-storage/root": "github:react-native-async-storage/async-storage",
     "@react-navigation/bottom-tabs": "^7.0.0",
+    "@reclaimprotocol/reactnative-sdk": "^2.1.1",
     "expo": "~52.0.7",
     "expo-blur": "~14.0.1",
     "expo-constants": "~17.0.3",

@@ -16,6 +16,7 @@ import {
   Modal,
 } from 'react-native';
 import { Button } from '../components/Button';
+import { router } from 'expo-router';
 
 type FormData = {
   name: string;
@@ -23,6 +24,7 @@ type FormData = {
   gender: string;
   graduatedFrom: string;
   currentlyWorking: string;
+  verified: boolean;
 };
 
 type GenderOption = {
@@ -51,6 +53,7 @@ const SignupScreen: React.FC = () => {
     gender: '',
     graduatedFrom: '',
     currentlyWorking: '',
+    verified: false,
   });
 
   const [showGenderPicker, setShowGenderPicker] = useState(false);
@@ -65,8 +68,18 @@ const SignupScreen: React.FC = () => {
   ];
 
   const handleSubmit = () => {
-    console.log('Form submitted:', formData);
-    // Add submission logic here
+    // Add any validation here if needed
+    router.push({
+      pathname: '/verify',
+      params: {
+        name: formData.name,
+        dateOfBirth: formData.dateOfBirth,
+        gender: formData.gender,
+        graduatedFrom: formData.graduatedFrom,
+        currentlyWorking: formData.currentlyWorking,
+        verified: formData.verified.toString()
+      }
+    });
   };
 
   const handleDateChange = (text: string) => {
@@ -109,7 +122,7 @@ const SignupScreen: React.FC = () => {
     <>
       <StatusBar barStyle="dark-content" backgroundColor="#FFFFFF" />
       <SafeAreaView style={styles.safeArea}>
-        <View style={styles.header}>
+      <View style={styles.header}>
           <Image 
             source={require('../assets/images/logo.png')} 
             style={styles.logo}
