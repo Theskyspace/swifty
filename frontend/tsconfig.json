@@ -1,6 +1,9 @@
 {
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
+    "jsx": "react-native", // Use React Native JSX
+    "esModuleInterop": true,
+    "skipLibCheck": true, // Avoid type conflicts between dependencies
     "strict": true,
     "paths": {
       "@/*": [

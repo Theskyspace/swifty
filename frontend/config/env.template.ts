@@ -1,0 +1,7 @@
+export const ENV = {
+  RECLAIM: {
+    APP_ID: 'YOUR_APP_ID_HERE',
+    APP_SECRET: 'YOUR_APP_SECRET_HERE',
+    PROVIDER_ID: 'YOUR_PROVIDER_ID_HERE'
+  }
+} as const; 
